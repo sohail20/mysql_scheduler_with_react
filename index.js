@@ -5,7 +5,7 @@ const path = require("path")
 var schedule = require('node-schedule');
 const app = express(),
       bodyParser = require("body-parser");
-      PORT = 3080;
+      PORT = 3000;
 
 //Creting connection between database and web app
 const db = mysql.createPool({
