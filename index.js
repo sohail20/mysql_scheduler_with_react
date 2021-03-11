@@ -5,7 +5,7 @@ const path = require("path")
 var schedule = require('node-schedule');
 const app = express(),
       bodyParser = require("body-parser");
-      port = 3080;
+      PORT = 3080;
 
 //Creting connection between database and web app
 const db = mysql.createPool({
@@ -79,7 +79,7 @@ app.post('/api/insertUser', (req, res) => {
     })
 });
 
-app.listen(process.env.port || port, () => {
+app.listen(process.env.PORT || PORT, () => {
     console.log(`Server listening on the port::${port}`);
     //Creating table users if not exists
     var sql = "CREATE TABLE IF Not EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY,firstName VARCHAR(255), lastName VARCHAR(255),email VARCHAR(255) UNIQUE NOT NULL,gender VARCHAR(255),birth VARCHAR(255))";
